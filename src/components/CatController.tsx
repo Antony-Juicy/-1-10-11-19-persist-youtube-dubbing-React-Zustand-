@@ -1,6 +1,7 @@
-import { shallow } from "zustand/shallow";
-import { useCatStore } from "../stores/catStore";
+import { shallow } from 'zustand/shallow'
+import { useCatStore } from '../stores/catStore'
 
+/* 选择多个状态及什么是shallow  可以避免重复渲染 */
 export const CatController = () => {
   //   const { increaseBigCats, increaseSmallCats } = useCatStore();
   //   const increaseBigCats = useCatStore.use.increaseBigCats();
@@ -11,13 +12,13 @@ export const CatController = () => {
   //     increaseBigCats: state.increaseBigCats,
   //     increaseSmallCats: state.increaseSmallCats,
   //   }),
-  //   shallow
-  // );
+  //   shallow /* 之比较第一次的值 ，避免重复渲染*/
+  // )
 
   const [increaseBigCats, increaseSmallCats] = useCatStore(
     (state) => [state.increaseBigCats, state.increaseSmallCats],
-    shallow
-  );
+    shallow /* 之比较第一次的值 ，避免重复渲染*/
+  )
 
   return (
     <div className="box">
@@ -28,5 +29,5 @@ export const CatController = () => {
         <button onClick={increaseSmallCats}>add small cats</button>
       </div>
     </div>
-  );
-};
+  )
+}

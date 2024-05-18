@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
-import { useBearStore } from "../stores/bearStore";
-import { useFoodStore } from "../stores/foodStore";
-import { shallow } from "zustand/shallow";
+import { useEffect, useState } from 'react'
+import { useBearStore } from '../stores/bearStore'
+import { useFoodStore } from '../stores/foodStore'
+import { shallow } from 'zustand/shallow'
 
 export const BearBox = () => {
   // const bears = useBearStore((state) => state.bears);
   // const increasePopulation = useBearStore((state) => state.increasePopulation);
   // const removeAllBears = useBearStore((state) => state.removeAllBears);
-  const { bears, increasePopulation, removeAllBears } = useBearStore();
+
+  /*  解构写法，项目庞大会造成重复渲染 */
+  const { bears, increasePopulation, removeAllBears } = useBearStore()
 
   const [bgColor, setBgColor] = useState<
-    "lightgreen" | "lightpink" | undefined
-  >(useFoodStore.getState().fish > 5 ? "lightgreen" : "lightpink");
+    'lightgreen' | 'lightpink' | undefined
+  >(useFoodStore.getState().fish > 5 ? 'lightgreen' : 'lightpink')
 
   // const fish = useFoodStore((state) => state.fish);
 
@@ -36,19 +38,19 @@ export const BearBox = () => {
         // }
 
         if (prevFish <= 5 && fish > 5) {
-          setBgColor("lightgreen");
+          setBgColor('lightgreen')
         } else if (prevFish > 5 && fish <= 5) {
-          setBgColor("lightpink");
+          setBgColor('lightpink')
         }
       },
       {
         equalityFn: shallow,
         fireImmediately: true,
       }
-    );
+    )
 
-    return unsub;
-  }, []);
+    return unsub
+  }, [])
 
   return (
     <div className="box" style={{ backgroundColor: bgColor }}>
@@ -63,5 +65,5 @@ export const BearBox = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
