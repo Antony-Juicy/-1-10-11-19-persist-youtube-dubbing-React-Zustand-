@@ -43,9 +43,9 @@ export const Home = () => {
         <div className="home-hero__content">
           <p className="home-hero__eyebrow">Zustand Fundamentals</p>
           <h1 className="home-hero__title">
-            把基础用法留在首页，
+            从共享状态开始，
             <br />
-            但用更清楚的结构展示出来
+            理解 Zustand 的基础用法
           </h1>
           <p className="home-hero__description">
             这版首页继续保留你原来的核心示例，同时把阅读顺序、重点概念和演示区域重新整理，

@@ -24,6 +24,7 @@ export const Navigation = () => {
               key={item.path}
               to={item.path}
               className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+              aria-current={location.pathname === item.path ? 'page' : undefined}
             >
               <span className="nav-icon">{item.icon}</span>
               <span className="nav-label">{item.label}</span>

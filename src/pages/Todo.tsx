@@ -39,9 +39,9 @@ export const Todo = () => {
         <div className="todo-page__hero-content">
           <p className="todo-page__eyebrow">State In Action</p>
           <h1 className="todo-page__title">
-            Todo 应用页也切到首页同款风格，
+            用一个 Todo 应用，
             <br />
-            但保留真实应用感
+            练习完整的状态流转
           </h1>
           <p className="todo-page__description">
             这里更像一个完整的 Zustand 练习场。你可以直接新增任务、组合筛选条件，再通过统计结果观察派生状态如何同步变化。

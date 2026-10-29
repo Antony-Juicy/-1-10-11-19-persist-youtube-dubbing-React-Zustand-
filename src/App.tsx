@@ -5,6 +5,7 @@ import { Api } from './pages/Api'
 import { Todo } from './pages/Todo'
 import './index.css'
 import './components/Navigation.css'
+import './theme.css'
 
 function App() {
   return (

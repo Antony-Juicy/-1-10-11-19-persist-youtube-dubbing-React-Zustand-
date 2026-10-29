@@ -1,0 +1,66 @@
+:root {
+  --surface-page: #f5f6f0;
+  --surface-panel: #ffffff;
+  --surface-subtle: #e5ebde;
+  --text-primary: #202a25;
+  --text-secondary: #65726a;
+  --border-default: #dfe4dc;
+  --brand: #26744e;
+}
+
+body { background: var(--surface-page); color: var(--text-primary); font-family: 'Avenir Next', 'PingFang SC', sans-serif; }
+button { background: var(--brand); border: 1px solid var(--brand); border-radius: 5px; box-shadow: none; }
+button:hover { background: #1a5035; box-shadow: none; transform: none; }
+:focus-visible { outline: 3px solid #7caa43; outline-offset: 3px; }
+.navbar { background: var(--surface-page); border-bottom: 1px solid var(--border-default); box-shadow: none; backdrop-filter: none; }
+.navbar-container { min-height: 66px; }
+.navbar-brand { font-size: 17px; color: #263a2c; }
+.navbar-brand::before, .nav-item.active::before { display: none; }
+.nav-item { background: transparent; color: #637061; border: 0; box-shadow: none; padding: 8px 14px; border-radius: 4px; font-size: 13px; backdrop-filter: none; }
+.nav-item:hover, .nav-item.active { background: var(--surface-subtle); color: #245c3e; box-shadow: none; transform: none; }
+.navbar-brand:hover { transform: none; }
+.brand-icon, .nav-icon { filter: none; }
+.home-page, .todo-page { max-width: 1440px; padding: 44px 24px 56px; --home-text: var(--text-primary); --home-text-muted: var(--text-secondary); --todo-text: var(--text-primary); --todo-text-muted: var(--text-secondary); }
+.home-page::before, .todo-page::before { display: none; }
+.home-hero, .todo-page__hero { border-bottom: 1px solid var(--border-default); padding-bottom: 30px; margin-bottom: 30px; }
+.home-hero__content, .todo-page__hero-content { border: 0; background: transparent; padding: 8px 0; border-radius: 0; box-shadow: none; backdrop-filter: none; }
+.home-hero__title, .todo-page__title { font-size: clamp(28px, 3vw, 38px); line-height: 1.3; letter-spacing: -1px; font-weight: 600; }
+.home-hero__description, .todo-page__description { font-size: 14px; }
+.home-hero__panel, .todo-page__panel { background: var(--surface-subtle); color: var(--text-primary); border: 1px solid var(--border-default); border-radius: 8px; box-shadow: none; backdrop-filter: none; padding: 24px; }
+.home-panel__label, .todo-page__panel-label, .home-hero__eyebrow, .todo-page__eyebrow, .home-section-heading>p, .todo-page__section-heading>p { color: var(--brand); font: 11px/1.7 'SFMono-Regular', Consolas, monospace; letter-spacing: 1.5px; }
+.home-panel__title, .todo-page__panel-title { font-size: 18px; letter-spacing: 0; }
+.home-panel__steps, .todo-page__panel-list { font-size: 13px; color: var(--text-secondary); }
+.home-hero__chips, .todo-page__chips { gap: 8px; }
+.home-hero__chip, .todo-page__chip { background: transparent; color: var(--brand); border: 1px solid var(--border-default); border-radius: 4px; font-size: 11px; font-weight: 500; padding: 6px 9px; }
+.home-overview__card, .todo-page__overview-card { background: transparent; border: 0; border-left: 2px solid var(--border-default); border-radius: 0; padding: 8px 20px; box-shadow: none; backdrop-filter: none; }
+.home-overview__card:hover, .todo-page__overview-card:hover { transform: none; box-shadow: none; }
+.home-overview__card p, .todo-page__overview-card p { font-size: 13px; }
+.home-overview__card h2, .todo-page__overview-card h2 { font-size: 15px; }
+.home-section-heading>h2, .todo-page__section-heading>h2 { font-size: 24px; letter-spacing: -.5px; }
+.home-section-heading>span, .todo-page__section-heading>span { font-size: 13px; }
+.home-page__content .box, .home-typewriter-shell { background: var(--surface-panel); border: 1px solid var(--border-default); border-radius: 8px; box-shadow: none; backdrop-filter: none; }
+.home-page__content .box:hover { transform: none; box-shadow: none; }
+.home-page .box_container { background: transparent; border-radius: 4px; color: var(--text-secondary); }
+.todo-page :is(.todo-form,.todo-stats,.todo-filter,.todo-list,.todo-empty,.todo-app__summary-card) { background: var(--surface-panel); border: 1px solid var(--border-default); border-radius: 8px; box-shadow: none; backdrop-filter: none; }
+.todo-page .todo-app__summary-card--primary { background: #263c30; color: #f5f6f0; }
+.todo-page .todo-app__summary-card--primary :is(.todo-app__summary-eyebrow,span) { color: #dae6d5; }
+.todo-page :is(.todo-card-heading p,.todo-app__summary-eyebrow,.stat-value,.todo-app__metric strong) { color: var(--brand); }
+.todo-page :is(.todo-app__metric,.stat-card,.todo-stats__progress) { background: var(--surface-page); border: 1px solid var(--border-default); border-radius: 5px; }
+.todo-page :is(.todo-app__filter-pill,.todo-filter__active-pill,.todo-empty__pill,.todo-status) { background: var(--surface-subtle); color: #245c3e; border-radius: 4px; }
+.todo-page :is(.form-input,.form-textarea,.form-select,.filter-input,.filter-select,.todo-edit-input,.todo-status-select) { background: var(--surface-panel); color: var(--text-primary); border: 1px solid #cbd3c8; border-radius: 5px; box-shadow: none; }
+.todo-page :is(.form-input,.form-textarea,.filter-input,.filter-select,.todo-edit-input):focus { border-color: var(--brand); box-shadow: none; }
+.todo-page .todo-priority-option { background: var(--surface-page); box-shadow: none; border-radius: 5px; }
+.todo-page .todo-priority-option.is-active { background: var(--surface-subtle); border-color: var(--brand); box-shadow: none; }
+.todo-page .todo-app .btn-primary { background: var(--brand); color: white; box-shadow: none; }
+.todo-page .todo-app .btn { border-radius: 5px; box-shadow: none; }
+.todo-page .todo-app .btn:hover { transform: none; }
+.todo-page :is(.todo-progress__fill,.todo-stats__progress-fill) { background: #78a96a; }
+.todo-page .todo-checkbox { accent-color: var(--brand); }
+@media(max-width:768px) {
+  .navbar { position: static; }
+  .navbar-container { padding: 12px; gap: 8px; }
+  .navbar-brand { padding: 0; }
+  .nav-item { padding: 6px 10px; }
+  .home-page, .todo-page { padding: 24px 16px 36px; }
+  .home-hero__content, .todo-page__hero-content { padding: 0; }
+}
