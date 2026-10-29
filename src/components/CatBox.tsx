@@ -9,18 +9,10 @@
 import { useCatStore } from '../stores/catStore';
 
 export const CatBox = () => {
-  // const bigCats = useCatStore((state) => state.cats.bigCats)
-  // const smallCats = useCatStore((state) => state.cats.smallCats)
-  // const increaseBigCats = useCatStore((state) => state.increaseBigCats)
-  // const increaseSmallCats = useCatStore((state) => state.increaseSmallCats)
-  // const summary = useCatStore((state) => state.summary)
-
-  const {
-    cats: { bigCats, smallCats },
-    increaseBigCats,
-    increaseSmallCats,
-    summary,
-  } = useCatStore();
+  const cats = useCatStore.use.cats() as { bigCats: number; smallCats: number };
+  const increaseBigCats = useCatStore.use.increaseBigCats() as () => void;
+  const increaseSmallCats = useCatStore.use.increaseSmallCats() as () => void;
+  const summary = useCatStore.use.summary() as () => string;
 
   // console.log(summary())
 
@@ -29,8 +21,8 @@ export const CatBox = () => {
       {`------ ${JSON.stringify(summary())} ------`}
 
       <h1>Cat Box</h1>
-      <p>big cats: {bigCats}</p>
-      <p>small cats: {smallCats}</p>
+      <p>big cats: {cats.bigCats}</p>
+      <p>small cats: {cats.smallCats}</p>
       <p>{Math.random()}</p>
       <div>
         <button onClick={increaseBigCats}>add big cats</button>

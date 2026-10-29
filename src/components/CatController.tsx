@@ -1,4 +1,4 @@
-import { shallow } from 'zustand/shallow'
+import { useShallow } from 'zustand/react/shallow'
 import { useCatStore } from '../stores/catStore'
 
 /* 选择多个状态及什么是shallow  可以避免重复渲染 */
@@ -16,8 +16,7 @@ export const CatController = () => {
   // )
 
   const [increaseBigCats, increaseSmallCats] = useCatStore(
-    (state) => [state.increaseBigCats, state.increaseSmallCats],
-    shallow /* 之比较第一次的值 ，避免重复渲染*/
+    useShallow((state) => [state.increaseBigCats, state.increaseSmallCats] as const)
   )
 
   return (

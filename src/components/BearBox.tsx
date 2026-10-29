@@ -9,7 +9,9 @@ export const BearBox = () => {
   // const removeAllBears = useBearStore((state) => state.removeAllBears);
 
   /*  解构写法，项目庞大会造成重复渲染 */
-  const { bears, increasePopulation, removeAllBears } = useBearStore()
+  const bears = useBearStore((state) => state.bears)
+  const increasePopulation = useBearStore((state) => state.increasePopulation)
+  const removeAllBears = useBearStore((state) => state.removeAllBears)
 
   const [bgColor, setBgColor] = useState<
     'lightgreen' | 'lightpink' | undefined

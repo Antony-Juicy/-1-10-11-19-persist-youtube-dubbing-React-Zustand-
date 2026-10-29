@@ -6,7 +6,7 @@
  * @FilePath: /react_zustand_tutorial/src/components/FoodBox.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import React from 'react';
+import { useCallback } from 'react';
 import { useFoodStore, addOneFish, removeOneFish, removeAllFish } from '../stores/foodStore';
 
 export const FoodBox = () => {
@@ -15,11 +15,16 @@ export const FoodBox = () => {
   const fish = useFoodStore((state) => state.fish);
   // const fish = useFoodStore.getState().fish; // non-reactive
 
-  const add5Fish = () => {
+  const add5Fish = useCallback(() => {
     useFoodStore.setState((state) => ({
       fish: state.fish + 5,
     }));
-  };
+  }, []);
+  const add10Fish = useCallback(() => {
+    useFoodStore.setState((state) => ({
+      fish: state.fish + 10,
+    }));
+  }, []);
   return (
     <div className='box'>
       <h1>Food Box</h1>
@@ -29,6 +34,7 @@ export const FoodBox = () => {
         <button onClick={removeOneFish}>remove one fish</button>
         <button onClick={removeAllFish}>remove all fish</button>
         <button onClick={add5Fish}>add 5 fish</button>
+        <button onClick={add10Fish}>add 10 fish</button>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ type TCatStoreState = {
   }
   increaseBigCats: () => void
   increaseSmallCats: () => void
-  summary: () => void
+  summary: () => string
 }
 
 /************************  React Zustand 状态管理基础用法************************/
